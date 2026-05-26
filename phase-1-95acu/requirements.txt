@@ -1,0 +1,7 @@
+tensorflow
+tenseal
+streamlit
+numpy
+matplotlib
+shap
+scikit-learn

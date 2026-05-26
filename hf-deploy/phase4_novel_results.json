@@ -1,0 +1,90 @@
+{
+  "paper_title": "Cross-Dataset Generalizable Privacy-Preserving ECG Arrhythmia Diagnosis with SHAP Stability Auditing under CKKS Homomorphic Encryption",
+  "extends": "Cenitta et al., IEEE Access 2025, DOI: 10.1109/ACCESS.2025.3614655",
+  "datasets": {
+    "source": "MIT-BIH Arrhythmia DB \u2014 https://physionet.org/content/mitdb/1.0.0/",
+    "target": "PTB-XL \u2014 https://physionet.org/content/ptb-xl/1.0.3/",
+    "kaggle_ptbxl": "https://www.kaggle.com/datasets/khyeh0719/ptb-xl-dataset"
+  },
+  "claim_C1_shap_stability": {
+    "description": "SHAP rank-correlation across clinical\u2192wearable domain shift",
+    "mean_spearman_rho": 0.36542893961537953,
+    "per_class_rho": {
+      "N": 0.2756258234519104,
+      "S": 0.5915678524374176,
+      "V": 0.3487483530961792,
+      "F": 0.32448107197908427,
+      "Q": 0.28672159711230616
+    },
+    "top10_overlap": {
+      "N": 0.5,
+      "S": 0.6,
+      "V": 0.5,
+      "F": 0.4,
+      "Q": 0.5
+    },
+    "novelty": "First paper to measure SHAP consistency across ECG datasets under HE"
+  },
+  "claim_C2_adaptive_ckks": {
+    "description": "Risk-adaptive CKKS encryption tier per arrhythmia class",
+    "tiers": {
+      "LOW": {
+        "classes": [
+          "N"
+        ],
+        "security_bits": 80,
+        "poly_mod": 4096,
+        "clinical_risk": "Low",
+        "rationale": "Normal sinus rhythm \u2014 fast screening"
+      },
+      "MED": {
+        "classes": [
+          "S",
+          "F"
+        ],
+        "security_bits": 128,
+        "poly_mod": 8192,
+        "clinical_risk": "Medium",
+        "rationale": "Supraventricular/Fusion \u2014 monitoring required"
+      },
+      "HIGH": {
+        "classes": [
+          "V",
+          "Q"
+        ],
+        "security_bits": 192,
+        "poly_mod": 16384,
+        "clinical_risk": "High",
+        "rationale": "Ventricular ectopic/Unknown \u2014 life-critical"
+      }
+    },
+    "novelty": "First class-conditional CKKS parameter selection for ECG arrhythmia"
+  },
+  "claim_C3_noise_robustness": {
+    "description": "SHAP stability under wearable SNR degradation",
+    "snr_levels_db": [
+      30,
+      20,
+      15,
+      10,
+      5
+    ],
+    "mean_rho_by_snr": [
+      0.9723159127506954,
+      0.9709515444298054,
+      0.9724681598594641,
+      0.9675347679695505,
+      0.9640989606206998
+    ],
+    "shap_threshold_snr_db": 5,
+    "threshold_rho": 0.7,
+    "novelty": "First SHAP reliability threshold for wearable ECG deployment"
+  },
+  "claim_C4_cross_dataset_ckks": {
+    "description": "CKKS encrypted inference on PTB-XL (domain generalization)",
+    "mitbih_accuracy_pct": 95.66303222269599,
+    "ptbxl_plain_acc_pct": 21.099999999999998,
+    "domain_shift_gap": 74.563032222696,
+    "novelty": "First HE inference across two ECG datasets"
+  }
+}
