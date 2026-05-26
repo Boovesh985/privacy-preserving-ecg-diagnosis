@@ -1,4 +1,4 @@
-# 🫀 Privacy-Preserving ECG Diagnosis with Homomorphic Encryption & Explainable AI
+#  Privacy-Preserving ECG Diagnosis with Homomorphic Encryption & Explainable AI
 
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![TensorFlow](https://img.shields.io/badge/TensorFlow-2.16-orange.svg)](https://www.tensorflow.org/)
@@ -11,7 +11,7 @@ Extends: *Cenitta et al., "Explainable AI With Homomorphic Encryption for Secure
 
 ---
 
-## 📋 Table of Contents
+##  Table of Contents
 
 - [Overview](#overview)
 - [Architecture](#architecture)
