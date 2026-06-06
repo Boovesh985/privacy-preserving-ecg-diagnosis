@@ -266,7 +266,7 @@ The framework decomposes predictions into **45 clinical ECG features**, includin
 
 The application is deployed on Hugging Face Spaces:
 
-🔗 **[Launch Live Demo](https://huggingface.co/spaces/YOUR_USERNAME/secure-ecg-analysis)**
+🔗 **[Launch Live Demo](https://huggingface.co/spaces/Boovesh985/secure-ecg-analysis)**
 
 > *Note: The HF Spaces version uses plaintext CNN inference for speed on free-tier hardware, while encryption/decryption operations are real CKKS.*
 

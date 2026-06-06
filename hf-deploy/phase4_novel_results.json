@@ -35,7 +35,7 @@
         "security_bits": 80,
         "poly_mod": 4096,
         "clinical_risk": "Low",
-        "rationale": "Normal sinus rhythm \u2014 fast screening"
+        "rationale": "Normal sinus rhythm \u2014 pre-clinical triage/screening tier (short-term local processing, not archival)"
       },
       "MED": {
         "classes": [
